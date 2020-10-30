@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Seeker))]
+
 public class EnemyAI : MonoBehaviour
 {
+
     // What to chase?
     public Transform target;
 

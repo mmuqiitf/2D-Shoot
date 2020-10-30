@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
-    public int health = 5;
+    public int health;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -13,13 +14,15 @@ public class PlayerController : MonoBehaviour {
     public float speed;
 
     private float move;
-    public float jumpSpeed = 700;
+    public float jumpSpeed;
 
     private bool isJumping;
 
     public bool facingRight = true;
 
     public int fallBoundary = -20;
+
+    public Slider playerHealthBar;
 
     private void Start()
     {
@@ -29,11 +32,13 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
+        playerHealthBar.value = health;
+
         move = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        if (Input.GetButtonDown("Jump") && !isJumping)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpSpeed));
             Debug.Log("jump");
@@ -44,7 +49,6 @@ public class PlayerController : MonoBehaviour {
         {
             GameManager.KillPlayer(this);
         }
-
 
     }
 
@@ -89,6 +93,4 @@ public class PlayerController : MonoBehaviour {
             Debug.LogError("Player has been killed!");
         }
     }
-
-
 }

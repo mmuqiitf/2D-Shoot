@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     public void ChangeScore(int value)
     {
         score = score + value;
-        text.text = score.ToString() + "x" ;
+        text.text = score.ToString();
         Debug.Log("Air : " + score);
     }
 

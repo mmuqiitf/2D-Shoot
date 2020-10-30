@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour {
 
     public int health;
     public GameObject deathEffect;
+    public int damage;
 
     private void Update()
     {
@@ -15,8 +16,9 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public void TakeDamage(int damage) {
-        health -= damage;
+    public void TakeDamage(int takeDamage)
+    {
+        health -= takeDamage;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -24,7 +26,7 @@ public class Enemy : MonoBehaviour {
         PlayerController _player = collision.collider.GetComponent<PlayerController>();
         if (_player != null)
         {
-            _player.DamagePlayer(1);
+            _player.DamagePlayer(damage);
         }
     }
 }
