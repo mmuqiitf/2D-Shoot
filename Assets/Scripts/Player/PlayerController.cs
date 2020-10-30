@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour {
     private bool isJumping;
 
     public bool facingRight = true;
+
+    public int fallBoundary = -20;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -36,6 +39,12 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("jump");
             isJumping = true;
         }
+
+        if (transform.position.y <= fallBoundary)
+        {
+            GameManager.KillPlayer(this);
+        }
+
 
     }
 
@@ -62,5 +71,14 @@ public class PlayerController : MonoBehaviour {
             isJumping = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Air")
+        {
+            Destroy(other.gameObject);
+        }
+    }
+
 
 }

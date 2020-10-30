@@ -36,12 +36,6 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(Vector3.up * 180);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Air")
-        {
-            Destroy(other.gameObject);
-        }
-    }
+    
 
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CameraFollowedPlayer : MonoBehaviour {
 
-    [SerializeField] private GameObject objectToFollow;
+    [SerializeField] private Transform objectToFollow;
+
+    private float nextTimeToSearch = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +15,30 @@ public class CameraFollowedPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (objectToFollow == null)
+        {
+            FindPlayer();
+            return;
+        }
+
         Camera.main.transform.position = Vector3.Lerp(this.transform.position,
             new Vector3(objectToFollow.transform.position.x, objectToFollow.transform.position.y,
             this.transform.position.z), 300 * Time.deltaTime);
+
 	}
+
+    void FindPlayer()
+    {
+        if (nextTimeToSearch <= Time.time)
+        {
+            GameObject searchResult = GameObject.FindGameObjectWithTag("Player");
+            if (searchResult != null)
+            {
+                objectToFollow = searchResult.transform;
+                nextTimeToSearch = Time.time + 0.5f;
+            }
+        }
+    }
+
 }
