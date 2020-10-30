@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public int health;
+    public int health = 5;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-
     void FixedUpdate()
     { 
         //rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
@@ -77,6 +76,17 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "Air")
         {
             Destroy(other.gameObject);
+        }
+    }
+
+    public void DamagePlayer(int damage)
+    {
+        health -= damage;
+        Debug.Log("Player Health : " + health);
+        if (health <= 0)
+        {
+            GameManager.KillPlayer(this);
+            Debug.LogError("Player has been killed!");
         }
     }
 
