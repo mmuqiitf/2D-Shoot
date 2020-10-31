@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
-    public int health;
+    public float health;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour {
         if (health <= 0)
         {
             GameManager.KillPlayer(this);
-            Debug.LogError("Player has been killed!");
+            //Debug.LogError("Player has been killed!");
         }
     }
 }

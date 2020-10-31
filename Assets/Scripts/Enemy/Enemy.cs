@@ -8,11 +8,14 @@ public class Enemy : MonoBehaviour {
     public GameObject deathEffect;
     public int damage;
 
+    public int scoreValue;
+
     private void Update()
     {
         if (health <= 0) {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            ScoreManager.instance.ChangeScore(scoreValue);
         }
     }
 
@@ -20,6 +23,7 @@ public class Enemy : MonoBehaviour {
     {
         health -= takeDamage;
     }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {

@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         Instantiate(playerPefab, spawnPoint.position, spawnPoint.rotation);
         //Transform cloneSpawn = Instantiate(spawnPrefab, spawnPoint.position, spawnPoint.rotation);
         //Destroy(cloneSpawn.gameObject, 3f);
+
     }
     public static void KillPlayer(PlayerController player)
     {
