@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
+    public PlayerController instance;
 
     public float health;
+    public GameObject endGamePanel;
+    public GameObject failTitle;
+    public GameObject successTitle;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -49,7 +53,9 @@ public class PlayerController : MonoBehaviour {
 
         if (transform.position.y <= fallBoundary)
         {
-            GameManager.KillPlayer(this);
+            Destroy(gameObject);
+            endGamePanel.SetActive(true);
+            failTitle.SetActive(true);
         }
 
     }
@@ -91,8 +97,15 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("Player Health : " + health);
         if (health <= 0)
         {
-            GameManager.KillPlayer(this);
-            //Debug.LogError("Player has been killed!");
+            Destroy(gameObject);
+            endGamePanel.SetActive(true);
+            failTitle.SetActive(true);
         }
+    }
+
+    public void PlayerWins()
+    {
+        endGamePanel.SetActive(true);
+        successTitle.SetActive(true);
     }
 }

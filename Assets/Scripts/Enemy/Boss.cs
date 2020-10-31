@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-
     public int health;
     public int damage;
 
@@ -18,6 +17,7 @@ public class Boss : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+        //PlayerController other = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
 
@@ -33,6 +33,8 @@ public class Boss : MonoBehaviour {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
             ScoreManager.instance.ChangeScore(scoreValue);
+            PlayerController other = GameObject.Find("Player").GetComponent<PlayerController>();
+            other.PlayerWins();
         }
 
     }
