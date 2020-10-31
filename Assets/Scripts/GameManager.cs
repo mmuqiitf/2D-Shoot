@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Canvas canvas;
     public static GameManager gm;
     public Transform playerPefab;
     public Transform spawnPoint;
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(canvas);
         if (gm == null)
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
     }

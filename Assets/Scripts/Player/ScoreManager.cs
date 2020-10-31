@@ -17,6 +17,11 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void ChangeScore(int value)
     {
         score = score + value;
