@@ -38,6 +38,12 @@ public class EnemyAI : MonoBehaviour
 
     private bool searchingForPlayer = false;
 
+    public float bufferDistance;
+
+    public Transform top;
+    public Transform first;
+    public Transform end;
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -138,13 +144,17 @@ public class EnemyAI : MonoBehaviour
         dir *= speed * Time.fixedDeltaTime;
 
         //Move the AI
-        rb.AddForce(dir, fMode);
-
-        float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
-        if (dist < nextWaypointDistance)
+        float distance = Vector3.Distance(target.position, transform.position);
+        if (distance <= bufferDistance)
         {
-            currentWaypoint++;
-            return;
+            rb.AddForce(dir, fMode);
+
+            float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
+            if (dist < nextWaypointDistance)
+            {
+                currentWaypoint++;
+                return;
+            }
         }
     }
 }
