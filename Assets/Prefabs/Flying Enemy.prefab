@@ -420,7 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   updateRate: 2
-  speed: 400
+  speed: 600
   fMode: 0
   pathIsEnded: 0
   nextWaypointDistance: 3
@@ -470,7 +470,7 @@ MonoBehaviour:
   deathEffect: {fileID: 1840926059346982906, guid: 0d1a209b0940a194ab1dee80597bd48c,
     type: 3}
   damage: 3
-  scoreValue: 5
+  scoreValue: 25
 --- !u!95 &5957411464753859350
 Animator:
   serializedVersion: 3

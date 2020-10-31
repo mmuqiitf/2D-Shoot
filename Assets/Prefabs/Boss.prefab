@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1143064353470106128}
   - component: {fileID: 1143064353470106135}
   - component: {fileID: 1143064353470106134}
+  - component: {fileID: 8072440667010314056}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Boss
@@ -50,6 +51,7 @@ MonoBehaviour:
   deathEffect: {fileID: 1110264763428426, guid: 0b520b61adf20d64c969fa5367dbe584,
     type: 3}
   healthBar: {fileID: 0}
+  scoreValue: 100
 --- !u!61 &1143064353470106134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76,6 +78,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.3836136, y: 5.385048}
   m_EdgeRadius: 0
+--- !u!95 &8072440667010314056
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143064353470106129}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d103943da7062046ab2b46c61d8ec8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1143064353686431051
 GameObject:
   m_ObjectHideFlags: 0

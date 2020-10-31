@@ -415,7 +415,7 @@ MonoBehaviour:
   deathEffect: {fileID: 1110264763428426, guid: 0b520b61adf20d64c969fa5367dbe584,
     type: 3}
   damage: 5
-  scoreValue: 3
+  scoreValue: 10
 --- !u!95 &5860858347836121851
 Animator:
   serializedVersion: 3
