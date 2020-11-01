@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     public PlayerController instance;
+    public Projectile projectile;
 
     public float health;
     public GameObject endGamePanel;
@@ -89,6 +90,16 @@ public class PlayerController : MonoBehaviour {
         {
             Destroy(other.gameObject);
         }
+        if (other.gameObject.tag == "Power")
+        {
+            Destroy(other.gameObject);
+            StartCoroutine(projectile.Powerup());
+        }
+        if (other.gameObject.tag == "Health")
+        {
+            Destroy(other.gameObject);
+            health += 5;
+        }
     }
 
     public void DamagePlayer(int damage)
@@ -108,4 +119,5 @@ public class PlayerController : MonoBehaviour {
         endGamePanel.SetActive(true);
         successTitle.SetActive(true);
     }
+
 }

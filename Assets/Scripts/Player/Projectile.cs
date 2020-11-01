@@ -7,13 +7,19 @@ public class Projectile : MonoBehaviour
     public float speed;
     public float lifeTime;
     public float distance;
-    public int damage;
+    public int damage = 1;
     public LayerMask whatIsSolid;
 
     public GameObject destroyEffect;
+    public static Projectile instance;
+    public int value;
 
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         Invoke("DestroyProjectile", lifeTime);
     }
 
@@ -40,7 +46,15 @@ public class Projectile : MonoBehaviour
     }
 
     void DestroyProjectile() {
-        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        GameObject clone = Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Destroy(clone, 0.5f);
+    }
+
+    public IEnumerator Powerup()
+    {
+        damage = 3;
+        yield return new WaitForSeconds(5f);
+        damage = 1;
     }
 }

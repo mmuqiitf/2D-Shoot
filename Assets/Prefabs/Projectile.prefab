@@ -104,3 +104,4 @@ MonoBehaviour:
     m_Bits: 256
   destroyEffect: {fileID: 1657798570406232, guid: 37b670ad2bbb9dc45b2eea5daeb21379,
     type: 3}
+  value: 0
