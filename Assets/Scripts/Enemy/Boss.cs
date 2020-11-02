@@ -8,7 +8,6 @@ public class Boss : MonoBehaviour {
     public int damage;
 
     public GameObject deathEffect;
-    //public Animator camAnim;
     public Slider healthBar;
     private Animator anim;
 
@@ -17,7 +16,6 @@ public class Boss : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
-        //PlayerController other = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
 

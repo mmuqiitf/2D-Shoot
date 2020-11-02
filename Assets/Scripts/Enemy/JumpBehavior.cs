@@ -5,10 +5,10 @@ using UnityEngine;
 public class JumpBehavior : StateMachineBehaviour
 {
     public float timer;
-    public float minTime = 1f;
-    public float maxTime = 2.5f;
+    public float minTime;
+    public float maxTime;
 
-    public float speed = 7;
+    public float speed;
     private Transform playerPos;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state

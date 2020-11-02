@@ -420,7 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   updateRate: 2
-  speed: 600
+  speed: 800
   fMode: 0
   pathIsEnded: 0
   nextWaypointDistance: 3

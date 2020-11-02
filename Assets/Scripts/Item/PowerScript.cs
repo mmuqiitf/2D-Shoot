@@ -17,8 +17,7 @@ public class PowerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Projectile.instance.damage += value;
-            Debug.Log("Damage : " + Projectile.instance.damage);
+            //Debug.Log("Damage : " + Projectile.instance.damage);
         }
     }
 

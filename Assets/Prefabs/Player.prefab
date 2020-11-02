@@ -174,7 +174,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb3e4961209a6f41ba0b0863e084b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  projectile: {fileID: 3938421320031577339, guid: a86a10b4081582846a7f840822c7edaf,
+    type: 3}
   health: 50
+  endGamePanel: {fileID: 0}
+  failTitle: {fileID: 0}
+  successTitle: {fileID: 0}
   speed: 25
   jumpSpeed: 1000
   facingRight: 1

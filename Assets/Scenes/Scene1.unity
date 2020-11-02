@@ -2601,10 +2601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 135326129}
-  playerPefab: {fileID: 8623034479461388835, guid: e841c1f887670db4fbc168acdad6e55c,
-    type: 3}
-  spawnPoint: {fileID: 864887787}
-  spawnDelay: 2
 --- !u!4 &864207634
 Transform:
   m_ObjectHideFlags: 0
@@ -2899,7 +2895,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973745799}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5f36212c478d09408e1fa03505d9260, type: 3}
   m_Name: 
@@ -3234,7 +3230,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181905836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5f36212c478d09408e1fa03505d9260, type: 3}
   m_Name: 
@@ -4058,8 +4054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -248, y: -296.4}
-  m_SizeDelta: {x: 534.1584, y: 86.22858}
+  m_AnchoredPosition: {x: -259, y: -296.4}
+  m_SizeDelta: {x: 270.37897, y: 86.22858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1350656984
 MonoBehaviour:
@@ -6373,12 +6369,23 @@ PrefabInstance:
         type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 3938421320031577339, guid: a86a10b4081582846a7f840822c7edaf,
+      objectReference: {fileID: 8001911584708386327, guid: a86a10b4081582846a7f840822c7edaf,
         type: 3}
     - target: {fileID: 8623034479461388863, guid: e841c1f887670db4fbc168acdad6e55c,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8623034480326295169, guid: e841c1f887670db4fbc168acdad6e55c,
+        type: 3}
+      propertyPath: offset
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8623034480326295169, guid: e841c1f887670db4fbc168acdad6e55c,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 8152758863784803599, guid: a86a10b4081582846a7f840822c7edaf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e841c1f887670db4fbc168acdad6e55c, type: 3}

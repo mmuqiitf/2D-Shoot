@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour {
-    public PlayerController instance;
+public class PlayerController : MonoBehaviour { 
     public Projectile projectile;
 
     public float health;
     public GameObject endGamePanel;
     public GameObject failTitle;
     public GameObject successTitle;
+    public GameObject powerUpText;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -54,17 +54,13 @@ public class PlayerController : MonoBehaviour {
 
         if (transform.position.y <= fallBoundary)
         {
-            Destroy(gameObject);
-            endGamePanel.SetActive(true);
-            failTitle.SetActive(true);
+            PlayerLose();
         }
 
     }
 
     void FixedUpdate()
     { 
-        //rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
-
         float move = Input.GetAxis("Horizontal");
 
         if (move < 0 && facingRight) Flip();
@@ -108,9 +104,7 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("Player Health : " + health);
         if (health <= 0)
         {
-            Destroy(gameObject);
-            endGamePanel.SetActive(true);
-            failTitle.SetActive(true);
+            PlayerLose();
         }
     }
 
@@ -120,4 +114,10 @@ public class PlayerController : MonoBehaviour {
         successTitle.SetActive(true);
     }
 
+    public void PlayerLose()
+    {
+        Destroy(gameObject);
+        endGamePanel.SetActive(true);
+        failTitle.SetActive(true);
+    }
 }
