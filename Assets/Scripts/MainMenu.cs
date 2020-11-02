@@ -18,6 +18,10 @@ public class MainMenu : MonoBehaviour
 
     public void Menu()
     {
+        foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
+        {
+            Destroy(o);
+        }
         SceneManager.LoadScene("Menu");
     }
 }
